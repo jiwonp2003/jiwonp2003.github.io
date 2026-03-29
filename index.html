@@ -1,16 +1,142 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Jiwon Park Portfolio</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jiwon Park | Portfolio</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      line-height: 1.6;
+      background-color: #f7f7f7;
+      color: #333;
+    }
+
+    header {
+      background-color: #222;
+      color: #fff;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5em;
+    }
+
+    header p {
+      font-size: 1.2em;
+      margin-top: 10px;
+    }
+
+    section {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 20px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      border-bottom: 2px solid #ddd;
+      padding-bottom: 5px;
+    }
+
+    .project {
+      margin-bottom: 40px;
+    }
+
+    .project img {
+      max-width: 100%;
+      border-radius: 6px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+
+    .project ul {
+      padding-left: 20px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+      color: #555;
+    }
+
+    a {
+      color: #0077cc;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
 </head>
 <body>
+
+<header>
   <h1>Jiwon Park</h1>
   <p>Software Engineer | GIS | AI/ML</p>
+  <p>
+    <a href="https://github.com/yourusername">GitHub</a> | 
+    <a href="https://www.linkedin.com/in/yourlinkedin/">LinkedIn</a>
+  </p>
+</header>
 
-  <h2>Projects</h2>
+<section>
+  <h2>Featured Project</h2>
 
-  <h3>Forest Age Mapping — City of Atlanta</h3>
-  <p>Geospatial analysis project using QGIS and aerial imagery.</p>
+  <div class="project">
+    <h3>Forest Age Mapping — City of Atlanta</h3>
+    <p>Developed a geospatial analysis pipeline to estimate forest age across Atlanta, supporting urban planning and ecological decision-making.</p>
+
+    <img src="forest_map_placeholder1.png" alt="Forest Age Map 1">
+    <img src="forest_map_placeholder2.png" alt="Forest Age Map 2">
+
+    <h4>What I Did:</h4>
+    <ul>
+      <li>Georeferenced historical aerial imagery using QGIS</li>
+      <li>Processed and mosaiced raster datasets for city-wide coverage</li>
+      <li>Resolved CRS mismatches (NAD83 vs Web Mercator)</li>
+      <li>Cleaned NoData artifacts to improve data quality</li>
+      <li>Integrated data from USGS EarthExplorer for temporal analysis</li>
+    </ul>
+
+    <h4>Impact:</h4>
+    <p>Supports the City of Atlanta in evaluating land parcels for acquisition based on forest maturity and ecological value.</p>
+  </div>
+
+  <h2>Other Projects</h2>
+
+  <div class="project">
+    <h3>Project Name 2</h3>
+    <p>Short description of what this project was about and why it matters.</p>
+    <img src="project2_placeholder.png" alt="Project 2 Screenshot">
+    <ul>
+      <li>Key achievement or technical skill demonstrated</li>
+      <li>Another achievement or tech used</li>
+    </ul>
+  </div>
+
+  <div class="project">
+    <h3>Project Name 3</h3>
+    <p>Short description of what this project was about and why it matters.</p>
+    <img src="project3_placeholder.png" alt="Project 3 Screenshot">
+    <ul>
+      <li>Key achievement or technical skill demonstrated</li>
+      <li>Another achievement or tech used</li>
+    </ul>
+  </div>
+
+</section>
+
+<footer>
+  &copy; 2026 Jiwon Park | <a href="https://github.com/yourusername">GitHub</a> | <a href="https://www.linkedin.com/in/yourlinkedin/">LinkedIn</a>
+</footer>
 
 </body>
 </html>
