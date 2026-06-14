@@ -123,6 +123,7 @@ a:hover { text-decoration: underline; }
 .pipeline {
   display: flex;
   align-items: center;
+  justify-content: center;
   flex-wrap: wrap;
   gap: 6px;
   margin: 18px 0;
@@ -162,6 +163,7 @@ a:hover { text-decoration: underline; }
 /* ── Tech pills ── */
 .tech-list {
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
   gap: 7px;
   margin-top: 14px;
@@ -177,6 +179,7 @@ a:hover { text-decoration: underline; }
 /* ── Stats bar ── */
 .stats {
   display: flex;
+  justify-content: center;
   gap: 24px;
   flex-wrap: wrap;
   margin: 18px 0 0;
