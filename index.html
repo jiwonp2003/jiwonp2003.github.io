@@ -10,20 +10,20 @@
 
 <header>
   <h1>Jiwon Park</h1>
-  <p class="subtitle">Software Engineer &nbsp;|&nbsp; GIS &nbsp;|&nbsp; AI/ML</p>
+  <p class="subtitle">Software Engineer &nbsp;|&nbsp; Geospatial AI &nbsp;|&nbsp; Machine Learning</p>
   <div class="links">
-    <a href="https://github.com/jiwonp2003">GitHub</a>
-    <a href="https://www.linkedin.com/in/jiwon-park-09312622a/">LinkedIn</a>
+    <a href="https://github.com/jiwonp2003" target="_blank" rel="noopener">GitHub</a>
+    <a href="https://www.linkedin.com/in/jiwonp2003/" target="_blank" rel="noopener">LinkedIn</a>
   </div>
 </header>
 
-<div class="container">
+<main class="container">
 
   <!-- ── Featured Project ── -->
-  <div class="card">
+  <section class="card">
     <h2>Featured Project</h2>
 
-    <div class="project">
+    <article class="project">
       <div class="project-title">
         <h3>ATL-Trees: Forest Age Mapping — City of Atlanta</h3>
         <span class="tag tag-gis">GIS</span>
@@ -56,49 +56,49 @@
         </div>
       </div>
 
-      <h4>Pipeline</h4>
+      <h4>Pipeline Execution Flow</h4>
       <div class="pipeline">
-        <span class="pipeline-step">preprocess.py</span>
+        <span class="pipeline-step"><code>preprocess.py</code></span>
         <span class="pipeline-arrow">→</span>
-        <span class="pipeline-step">model.py</span>
+        <span class="pipeline-step"><code>model.py</code></span>
         <span class="pipeline-arrow">→</span>
-        <span class="pipeline-step">infer_rasters.py</span>
+        <span class="pipeline-step"><code>infer_rasters.py</code></span>
         <span class="pipeline-arrow">→</span>
-        <span class="pipeline-step">temporal_tracking.py</span>
+        <span class="pipeline-step"><code>temporal_tracking.py</code></span>
       </div>
 
-      <h4>What I Built</h4>
+      <h4>Architecture & Implementation</h4>
       <ul>
         <li>
-          <strong>Preprocessing:</strong> Reprojected historical mosaics to EPSG:26916 via
+          <strong>Preprocessing:</strong> Reprojected historical mosaics to <code>EPSG:26916</code> via
           <code>WarpedVRT</code>, converted multi-band imagery to grayscale (BT.601 luminance),
           and extracted 256×256 chips with per-tile 2nd–98th percentile normalization.
-          Implemented polygon-level 70/15/15 train/val/test splits to prevent data leakage.
+          Implemented polygon-level 70/15/15 train/val/test splits to prevent spatial data leakage.
         </li>
         <li>
-          <strong>Model:</strong> Fine-tuned a DeepLabV3 + ResNet-50 (ImageNet pretrained) for
+          <strong>Model Architecture:</strong> Fine-tuned a DeepLabV3 + ResNet-50 (ImageNet pretrained) for
           binary segmentation (forest / non-forest). Used <code>WeightedRandomSampler</code> and
-          random augmentations to address class imbalance; trained with fp16 mixed precision for
-          ~1.7× speedup on GPU.
+          random augmentations to address class imbalance; trained with fp16 mixed precision (AMP) for
+          ~1.7× GPU training speedup.
         </li>
         <li>
-          <strong>Inference:</strong> Chunk-based wall-to-wall inference (4096×4096 px blocks)
-          with 50% overlapping tiles merged via softmax probability accumulation, keeping RAM
-          usage bounded across large city-wide rasters.
+          <strong>Inference Engine:</strong> Chunk-based wall-to-wall inference (4096×4096 px blocks)
+          with 50% overlapping tiles merged via softmax probability accumulation, maintaining bounded RAM
+          usage across large city-wide rasters.
         </li>
         <li>
-          <strong>Temporal tracking:</strong> Pixel-by-pixel comparison across all year mosaics
+          <strong>Temporal Tracking:</strong> Pixel-by-pixel comparison across multi-decade mosaics
           to classify legacy forest (never disturbed), young forest (regrown after clearing),
           and non-forest. Detected hidden regrowth gaps with a configurable year threshold.
         </li>
         <li>
-          <strong>Diagnostics:</strong> Wrote a <code>debug_pipeline.py</code> with 10-point
+          <strong>Automated Testing:</strong> Wrote <code>debug_pipeline.py</code> with 10-point
           automated checks covering CRS alignment, spatial overlap, label mask sanity, NoData
           contamination, and chip count validation.
         </li>
       </ul>
 
-      <h4>Outputs</h4>
+      <h4>Deliverables & Data Artifacts</h4>
       <div class="outputs-grid">
         <div class="output-item">
           <div class="output-icon">🗂️</div>
@@ -113,26 +113,19 @@
         <div class="output-item">
           <div class="output-icon">📁</div>
           <strong>per_year_mosaics/</strong>
-          Colored classified GeoTIFF per decade
+          Classified GeoTIFFs per decade
         </div>
         <div class="output-item">
           <div class="output-icon">📊</div>
           <strong>forest_regions_report.csv</strong>
-          Per-region age, confidence &amp; class breakdown
+          Per-region age &amp; confidence metrics
         </div>
         <div class="output-item">
           <div class="output-icon">🔍</div>
           <strong>forest_regions.gpkg</strong>
-          Vector layer for QGIS / ArcGIS identify workflows
+          Vector layer for QGIS / ArcGIS workflows
         </div>
       </div>
-
-      <h4>Impact</h4>
-      <p>
-        Enables the City of Atlanta to evaluate land parcels for acquisition based on forest
-        maturity, disturbance history, and ecological value — replacing manual review of
-        historical photography with an automated, reproducible geospatial analysis.
-      </p>
 
       <div class="stats">
         <div class="stat"><div class="num">8</div><div class="label">Decades of imagery</div></div>
@@ -151,46 +144,47 @@
         <span class="tech-pill">EPSG:26916 / WarpedVRT</span>
         <span class="tech-pill">Mixed Precision (AMP)</span>
         <span class="tech-pill">scikit-learn</span>
-        <span class="tech-pill">USGS EarthExplorer</span>
       </div>
-    </div>
-  </div>
+    </article>
+  </section>
 
   <!-- ── Other Projects ── -->
-  <div class="card">
-    <h2>Other Projects</h2>
+  <section class="card">
+    <h2>Other Technical Projects</h2>
 
-    <div class="mini-project project">
+    <article class="mini-project project">
       <div class="project-title">
-        <h3>Project Name 2</h3>
-        <span class="tag tag-ml">ML</span>
-      </div>
-      <p>Short description of what this project was about and why it matters.</p>
-      <ul>
-        <li>Key achievement or technical skill demonstrated</li>
-        <li>Another achievement or tech used</li>
-      </ul>
-    </div>
-
-    <div class="mini-project project">
-      <div class="project-title">
-        <h3>Project Name 3</h3>
+        <h3>Movie Reservation Web Platform</h3>
         <span class="tag tag-py">Python</span>
+        <span class="tag tag-ml">Full Stack</span>
       </div>
-      <p>Short description of what this project was about and why it matters.</p>
+      <p>Full-stack cinema ticketing system supporting live seat selection, ticket purchases, and RBAC authentication.</p>
       <ul>
-        <li>Key achievement or technical skill demonstrated</li>
-        <li>Another achievement or tech used</li>
+        <li>Implemented AWS-backed JWT authentication and role-based access control for client vs. admin views.</li>
+        <li>Structured relational schemas in SQLAlchemy to handle real-time reservations and sales analytics.</li>
       </ul>
-    </div>
-  </div>
+    </article>
 
-</div>
+    <article class="mini-project project">
+      <div class="project-title">
+        <h3>Social Media Platform for Cooking</h3>
+        <span class="tag tag-ml">Java</span>
+        <span class="tag tag-gis">MySQL</span>
+      </div>
+      <p>Recipe sharing and social discovery platform featuring interactive commenting, bookmarking, and post feeds.</p>
+      <ul>
+        <li>Designed optimized relational database schemas in MySQL, reducing query redundancy and search latency.</li>
+        <li>Engineered dynamic UI templates with Mustache and JavaScript frontend interactions.</li>
+      </ul>
+    </article>
+  </section>
+
+</main>
 
 <footer>
   &copy; 2026 Jiwon Park &nbsp;|&nbsp;
-  <a href="https://github.com/yourusername">GitHub</a> &nbsp;|&nbsp;
-  <a href="https://www.linkedin.com/in/yourlinkedin/">LinkedIn</a>
+  <a href="https://github.com/jiwonp2003" target="_blank" rel="noopener">GitHub</a> &nbsp;|&nbsp;
+  <a href="https://www.linkedin.com/in/jiwonp2003/" target="_blank" rel="noopener">LinkedIn</a>
 </footer>
 
 </body>
